@@ -20,6 +20,10 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatDividerModule} from '@angular/material/divider';
 import { GetallbooksComponent } from './Components/getallbooks/getallbooks.component';
 import { DisplaybooksComponent } from './Components/displaybooks/displaybooks.component';
+import { QuickviewComponent } from './Components/quickview/quickview.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { HeaderComponent } from './Components/header/header.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -29,7 +33,9 @@ import { DisplaybooksComponent } from './Components/displaybooks/displaybooks.co
     ForgotPasswordComponent,
     HomepageComponent,
     GetallbooksComponent,
-    DisplaybooksComponent
+    DisplaybooksComponent,
+    QuickviewComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -47,8 +53,9 @@ import { DisplaybooksComponent } from './Components/displaybooks/displaybooks.co
     MatSnackBarModule,
     MatIconModule,
     MatMenuModule,
-    MatDividerModule
-    
+    MatDividerModule,
+    MatTooltipModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
