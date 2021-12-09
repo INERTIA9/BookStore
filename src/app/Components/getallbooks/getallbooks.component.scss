@@ -1,0 +1,44 @@
+.example-card {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 200px;
+    height: 275px;
+    padding: 0px;
+   
+    border: 1px solid #E2E2E2 ;
+    border-width: 1px ;
+    margin-bottom: 20px;
+   
+    
+    
+}
+.ratings{
+    background-color: #388E3C;
+     font-size: 10px;
+      padding: 0px 2px 0px 1px;
+}
+.reviews{
+    font: normal normal normal 10px/13px Roboto; color: #878787; margin-left: 5px;
+}
+.matcarddiv{
+    display: flex;
+    flex-wrap:wrap;
+    gap:30px;
+    flex-direction: row;
+    justify-content: start;
+    margin-left: 100px;
+    margin-top: 50px;
+    position: relative;
+}
+.imgdiv{
+    display: flex;
+    justify-content: center;
+    background-color:#F5F5F5;
+}
+.mainimg{
+    width:105px;
+    height:135px;
+    margin-bottom: 20px;
+    margin-top:21px;
+}
