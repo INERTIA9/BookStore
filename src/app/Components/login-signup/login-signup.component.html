@@ -1,15 +1,15 @@
-<div style="background-color: gray;height: 100%;">
+<div style="background-color: gray;height: 100%;" [ngStyle.xs]="{'width.px': 550, color: 'blue'}" >
 
     <div fxLayout="row" fxLayoutAlign="center center">
-        <div fxLayout="column" fxLayoutAlign="space-between center" fxLayout.xs="row">
+        <div fxLayout="column" fxLayoutAlign="space-between center" fxLayout.xs="row" fxHide.lt-sm>
             <mat-card class="example-card ">
                 <img src="..//../../assets/Login-signup/Womencart.png" class="image">
                 <h1 class="h1">Online Book Shopping</h1>
             </mat-card>
         </div>
 
-        <div style="display: flex;flex-flow:row">
-            <mat-card class="example-card2">
+        <div style="display: flex;flex-flow:row" >
+            <mat-card class="example-card2" >
                 <div fxLayout="row" fxLayoutAlign="space-evenly start" style="margin-top:-89px;">
                     <mat-tab-group>
                         <mat-tab label="Login">
