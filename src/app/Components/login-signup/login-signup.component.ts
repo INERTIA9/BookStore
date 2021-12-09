@@ -50,7 +50,7 @@ export class LoginSignupComponent implements OnInit {
           duration: 2000,
         })
 
-        this.router.navigateByUrl('/homepage')
+        this.router.navigateByUrl('/homepage/getallbooks')
        
       }, error => {
         console.log(error);
