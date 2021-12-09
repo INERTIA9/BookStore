@@ -4,6 +4,8 @@ import { ForgotPasswordComponent } from './Components/forgot-password/forgot-pas
 import { GetallbooksComponent } from './Components/getallbooks/getallbooks.component';
 import { HomepageComponent } from './Components/homepage/homepage.component';
 import { LoginSignupComponent } from './Components/login-signup/login-signup.component';
+import { QuickviewComponent } from './Components/quickview/quickview.component';
+import { AuthGuard } from './Services/AuthorisationServices/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login-signup', pathMatch: 'full' },
@@ -12,10 +14,11 @@ const routes: Routes = [
   {
     path: 'homepage', component: HomepageComponent,
     children: [
-      { path: 'getallbooks', component: GetallbooksComponent }
+      { path: 'getallbooks', component: GetallbooksComponent },
+      
     ]
-  }
-
+  },
+  {path: 'quickview',component:QuickviewComponent}
 ];
 
 @NgModule({
