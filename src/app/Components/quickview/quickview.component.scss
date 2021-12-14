@@ -20,7 +20,8 @@
 .ratings {
     background-color: #388e3c;
     font-size: 14px;
-    padding: 0px 2px 0px 1px;
+    padding: 0px 4px 0px 4px;
+    color: white;
 }
 .reviews {
     font: normal normal normal 10px/13px Roboto;
@@ -56,4 +57,86 @@
     border: none;
     
 }
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .container {
+    display: block;
+    border: 1px solid #DBDBDB;
+    border-radius: 50%;
+    height: 23px;
+    width: 23px;
+}
 
+.container span {
+    position: relative;
+    top: 3px;
+}
+.itemqty{
+    display: block;
+    width: 35px;
+    padding: 9px 7px 5px 38px;
+    border: 1px solid  #DBDBDB;
+}
+.fabbutton{
+    width: 32px;
+    margin-right: 20px;
+    height: 32px;
+    background: darkgray;
+  }
+  .username{
+    margin-left: 11px;
+    margin-top: -1px;
+    font-size: 12px;
+  }
+  .center{
+    position: relative;
+  }
+  .center .stars{
+   
+    width: 500px;
+    text-align: start;
+  }
+  .stars input{
+    display: none;
+  }
+  .stars label{
+    float: left;
+    font-size: 30px;
+    color: lightgrey;
+    margin: 0 5px;
+    text-shadow: 1px 1px #bbb;
+  }
+  .stars label:before{
+    content: '★';
+  }
+  .stars input:checked ~ label{
+    color: gold;
+    text-shadow: 1px 1px #c60;
+  }
+  .stars:not(:checked) > label:hover,
+  .stars:not(:checked) > label:hover ~ label{
+    color: gold;
+  }
+  .stars input:checked > label:hover,
+  .stars input:checked > label:hover ~ label{
+    color: gold;
+    text-shadow: 1px 1px goldenrod;
+  }
+  .stars .result:before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 50%;
+    transform: translateX(-47%);
+    bottom: -30px;
+    font-size: 30px;
+    font-weight: 500;
+    color: gold;
+    font-family: 'Poppins', sans-serif;
+    display: none;
+  }
