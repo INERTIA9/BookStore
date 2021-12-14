@@ -22,8 +22,19 @@ import { GetallbooksComponent } from './Components/getallbooks/getallbooks.compo
 import { DisplaybooksComponent } from './Components/displaybooks/displaybooks.component';
 import { QuickviewComponent } from './Components/quickview/quickview.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import { HeaderComponent } from './Components/header/header.component';
 import { MatButtonModule } from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
+import { GetwishlistComponent } from './Components/getwishlist/getwishlist.component';
+import { GetcartComponent } from './Components/getcart/getcart.component';
+import { ProfileComponent } from './Components/profile/profile.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatRadioModule} from '@angular/material/radio';
+import { PlaceorderComponent } from './Components/placeorder/placeorder.component';
+import {MatBadgeModule} from '@angular/material/badge';
+import { FooterComponent } from './Components/footer/footer.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+
+
 
 
 @NgModule({
@@ -35,7 +46,12 @@ import { MatButtonModule } from '@angular/material/button';
     GetallbooksComponent,
     DisplaybooksComponent,
     QuickviewComponent,
-    HeaderComponent
+    GetwishlistComponent,
+    GetcartComponent,
+    ProfileComponent,
+    PlaceorderComponent,
+    FooterComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -55,6 +71,13 @@ import { MatButtonModule } from '@angular/material/button';
     MatMenuModule,
     MatDividerModule,
     MatTooltipModule,
+    MatSelectModule,
+    MatExpansionModule,
+    MatRadioModule,
+    MatButtonModule,
+    MatBadgeModule,
+    NgxPaginationModule
+  
    
   ],
   providers: [],
