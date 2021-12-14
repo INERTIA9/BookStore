@@ -44,18 +44,22 @@ export class LoginSignupComponent implements OnInit {
 
       console.log("valid");
       this.userservice.loginUserService(reqData).subscribe((result: any) => {
+        
+      
         console.log(result);
         localStorage.setItem('token',result.result.accessToken);
-        this._snackBar.open("login succesfull", '', {
+        this._snackBar.open("Login Successfull", '', {
           duration: 2000,
+          panelClass: ['brown-snackbar']
         })
 
         this.router.navigateByUrl('/homepage/getallbooks')
        
       }, error => {
         console.log(error);
-        this._snackBar.open("Insert Valid Data", '', {
+        this._snackBar.open("Enter Valid Data", '', {
           duration: 2000,
+          panelClass: ['brown-snackbar']
         })
 
       })
@@ -79,6 +83,8 @@ export class LoginSignupComponent implements OnInit {
       console.log("valid");
       this.userservice.registerUserService(reqData).subscribe((response: any) => {
         console.log(response);
+       
+       
 
       }, error => {
         console.log(error);
