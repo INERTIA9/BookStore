@@ -32,6 +32,19 @@ export class UserService {
     }
     return this.httpService.postService('login', reqData, true, headers)
   }
+
+  updateAddressService(reqData: any) {
+    let headers = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'x-access-token': this.token,
+      })
+    }
+    return this.httpService.putService('edit_user', reqData, true, headers)
+  }
+
+  
 }
+
 
 
