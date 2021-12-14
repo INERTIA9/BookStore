@@ -1,15 +1,15 @@
-
-<app-homepage></app-homepage>
-
 <div fxLayout="row" fxLayoutAlign="start center" style="margin-left: 100px;margin-top: 30px;">
     <button mat-button
         style=" padding-right: 0px; min-width: 50px;background-color: transparent;border: none;color:#9D9D9D">Home</button>
     <span>/Book(01)</span>
 </div>
 
-<div fxLayout="row" fxLayoutAlign="start start" style="margin-top: 30px;margin-left: 250px;" fxLayoutGap="50px">
 
+<div fxLayout="row" fxLayoutAlign="start start" style="margin-top: 30px;margin-left: 100px;" fxLayoutGap="50px">
+    <img src="../../../assets/Dashboard/Image 20.png">
     <div fxLayout="column" fxLayoutAlign="start start">
+
+
         <mat-card style="width: 300px;height: 400px; border: 2px solid #E2E2E2 ;">
             <div class="imgdiv">
                 <img src="../../../assets/Dashboard/Image 20.png" class="mainimg" alt="">
@@ -18,17 +18,31 @@
         </mat-card>
 
         <div fxLayout="row" fxLayoutAlign="space-evenly center" fxLayoutGap="20px" fxLayout.xs="column">
-            <button class="bottombuttons" style="color: white;">Add to Bag</button>
+            <button *ngIf="addtocart" class="bottombuttons" style="color: white;" (click)="addtoCart()">Add to
+                Bag</button>
+            <div *ngIf="countbox" fxLayout="row">
+                <button mat-icon-button (click)="decrease()" style="background-color: transparent;border: none;">
+                    <span class="container"><span style="color: #DBDBDB;">-</span></span>
+                </button>
+                <span class="itemqty">{{item_qty}}</span>
+                <button mat-icon-button (click)="increase()" style="background-color: transparent;border: none;">
+                    <span class="container"><span style="color: black;">+</span></span>
+                </button>
+            </div>
 
-            <button style=" background-color: black;color: white;" class="bottombuttons">Whishlist</button>
+            <button
+                (click)="addtoWishlist()" style=" background-color: black;color: white;"
+                class="bottombuttons">Whishlist
+
+            </button>
         </div>
 
     </div>
 
 
     <div>
-        <p style="font-size: 22px;">{{data.bookName}}</p>
-        <p style="font-size: 12px;color: #878787;"> by {{data.author}}</p>
+        <p style="font-size: 22px;">{{data?.bookName}}</p>
+        <p style="font-size: 12px;color: #878787;"> by {{data?.author}}</p>
 
         <div fxLayout="row" fxLayoutAlign="start center">
             <span class="ratings">4.5</span>
@@ -40,7 +54,7 @@
         </div>
 
         <div style="margin-top: 16px;">
-            <span style="font-size: 20px ;color: #0A0102;font-weight: 500;"> Rs. {{data.price}}</span>
+            <span style="font-size: 20px ;color: #0A0102;font-weight: 500;"> Rs. {{data?.price}}</span>
         </div>
 
 
@@ -61,43 +75,64 @@
             <span>Customer Feedback</span>
         </div>
 
-        <div style="background   : #F5F5F5 0% 0% no-repeat padding-box;font-size: 12px;padding: 14px;">
-            <p>Overall Rating</p>
-            <div fxLayout="row" style="color: #707070;" fxLayoutGap="3px">
-                <button mat-icon-button class="starbutton">
-                    <img src="../../../assets/BookDetailsImages/star_outline_black_24dp.svg" alt="">
-                </button>
-                <button mat-icon-button class="starbutton">
-                    <img src="../../../assets/BookDetailsImages/star_outline_black_24dp.svg" alt="">
-                </button>
-                <button mat-icon-button class="starbutton">
-                    <img src="../../../assets/BookDetailsImages/star_outline_black_24dp.svg" alt="">
-                </button>
-                <button mat-icon-button class="starbutton">
-                    <img src="../../../assets/BookDetailsImages/star_outline_black_24dp.svg" alt="">
-                </button>
-                <button mat-icon-button class="starbutton">
-                    <img src="../../../assets/BookDetailsImages/star_outline_black_24dp.svg" alt="">
-                </button>
-            </div>
+        <div style="background   :  0% 0% no-repeat padding-box;font-size: 12px;padding: 14px;">
 
-            <div class="search_bar">
+            <div fxLayout="column" style="background: #F5F5F5; padding: 10px;" fxLayoutGap="3px">
+
+                <p>Overall Rating</p>
+                <div class="center">
+                    <div class="stars">
+                        <input type="radio" id="five" [(ngModel)]="value" name="rate" value="5">
+                        <label for="five"></label>
+                        <input type="radio" id="four" [(ngModel)]="value" name="rate" value="4">
+                        <label for="four"></label>
+                        <input type="radio" id="three" [(ngModel)]="value" name="rate" value="3">
+                        <label for="three"></label>
+                        <input type="radio" id="two" [(ngModel)]="value" name="rate" value="2">
+                        <label for="two"></label>
+                        <input type="radio" id="one" [(ngModel)]="value" name="rate" value="1">
+                        <label for="one"></label>
+
+                    </div>
+                </div>
+
                 <div class="search_bar">
+                    <div class="search_bar">
 
-                    <input cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="20" type="text"
-                        placeholder="Write Something Here" class="search_input">
+                        <input [(ngModel)]="feedback" cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="20"
+                            type="text" placeholder="Write Something Here" class="search_input">
+
+                    </div>
 
                 </div>
-               
+
+                <div>
+                    <button (click)="addfeddback()" class="submitbutton" style="color: white;">Submit</button>
+                </div>
+
             </div>
 
-            <div>
-                <button class="submitbutton" style="color: white;">Submit</button>
-            </div>
 
+            <div fxLayout="column" fxLayoutAlign="start start" style="margin-top: 50px;" fxLayoutGap="30px">
+
+                <div *ngFor="let feeback of feedbackarray">
+                    <div fxLayout="column" fxLayoutAlign="start ">
+
+                        <div fxLayout="row" fxLayoutAlign="start start">
+                            <div>
+                                <button class="fabbutton" mat-mini-fab color="primary"
+                                    aria-label="Example icon button with a menu icon">
+                                    <mat-icon class="username"> {{getShortName(feeback.user_id.fullName)}}</mat-icon>
+                                </button>
+                            </div>
+                            <p>{{feeback.user_id.fullName}}</p>
+                        </div>
+                        <div fxLayout="column" style="margin-left: 50px;">
+                            <span>{{feeback.rating}}*</span>
+                            <span>{{feeback.comment}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-
-
-
     </div>
