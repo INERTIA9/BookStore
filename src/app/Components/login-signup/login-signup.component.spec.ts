@@ -1,4 +1,8 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { LoginSignupComponent } from './login-signup.component';
 
@@ -8,7 +12,8 @@ describe('LoginSignupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginSignupComponent ]
+      declarations: [ LoginSignupComponent ],
+      imports:[RouterTestingModule,ReactiveFormsModule,HttpClientModule,MatSnackBarModule]
     })
     .compileComponents();
   });
@@ -22,4 +27,13 @@ describe('LoginSignupComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('onLogin', () => {
+    component.onLogin()
+    expect(component.onLogin).toBeTruthy();
+  });
+  it('onSignup', () => {
+    component.onSignup()
+    expect(component.onSignup).toBeTruthy();
+  });
+
 });
