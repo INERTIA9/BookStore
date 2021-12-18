@@ -77,12 +77,13 @@ export class GetallbooksComponent implements OnInit {
     this.bookService.addtoWishlistService(book._id).subscribe((response:any)=>{
       console.log(response);
 
-      this._snackBar.open("Item Removed From Wishlist", '', {
+      this._snackBar.open("Item added to Wishlist", '', {
         duration: 2000,
         panelClass: ['brown-snackbar']
-      })
-     
-      
+      })   
+    }, error => {
+      console.log(error);
+
     })
 
   }
@@ -90,7 +91,10 @@ export class GetallbooksComponent implements OnInit {
   addtocart(book:any){
     this.bookService.addtoCartService(book._id).subscribe((response: any) => {
       console.log(response);
-
+      this._snackBar.open("Item added to Cart", '', {
+        duration: 2000,
+        panelClass: ['brown-snackbar']
+      })   
     }, error => {
       console.log(error);
 
