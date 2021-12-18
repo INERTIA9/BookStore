@@ -13,12 +13,13 @@
     margin-left: 30px;
 }
 .example-card2 {
-    top: 50px;
+    top: 25px;
     width: 300px;
-    height: 354px;
+    min-height: 300px;
     z-index: 1;
     padding: 60px;
     margin-left: -32px;
+    max-height: 500px;
 }
 .h1 {
     margin-left: 58px;
