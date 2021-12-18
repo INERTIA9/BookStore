@@ -125,9 +125,40 @@ export class BookService {
         'x-access-token': this.token
       })
     }
-   
+
     return this.httpService.getService(`get/feedback/${data.product_id}`, true, options);
 
+  }
+  addnewbookService(reqData: any) {
+    let headers = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.postService('admin/add/book', reqData, true, headers)
+
+  }
+
+  updatebookService(reqPayload: any, productID: any) {
+    let headers = {
+      headers: new HttpHeaders({
+        'x-access-token': this.token,
+        'content-Type': 'application/json'
+      })
+    }
+    return this.httpService.putService('admin/update/book/' + productID, reqPayload, true, headers);
+  }
+
+  deleteBookService(productID: any) {
+
+    let headers = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'x-access-token': this.token,
+      })
+    }
+    return this.httpService.deleteService('admin/delete/book/' + productID, null, true, headers)
   }
 }
 
