@@ -33,6 +33,9 @@ import { PlaceorderComponent } from './Components/placeorder/placeorder.componen
 import {MatBadgeModule} from '@angular/material/badge';
 import { FooterComponent } from './Components/footer/footer.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { AdminComponent } from './Components/admin/admin.component';
+import { UpdatebookadminComponent } from './Components/updatebookadmin/updatebookadmin.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -51,6 +54,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     ProfileComponent,
     PlaceorderComponent,
     FooterComponent,
+    AdminComponent,
+    UpdatebookadminComponent,
     
   ],
   imports: [
@@ -76,7 +81,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     MatRadioModule,
     MatButtonModule,
     MatBadgeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatDialogModule
   
    
   ],
