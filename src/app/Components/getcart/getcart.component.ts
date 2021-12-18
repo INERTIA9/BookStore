@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { BookService } from 'src/app/Services/bookService/book.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/Services/userService/user.service';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { DataService } from 'src/app/Services/DataService/data.service';
 @Component({
   selector: 'app-getcart',
   templateUrl: './getcart.component.html',
@@ -19,9 +20,10 @@ export class GetcartComponent implements OnInit {
   disableTextbox = true
   orderList: any = [];
 
+  
 
-
-  constructor(private bookService: BookService, private router: Router, private formBuilder: FormBuilder, private userservice: UserService, private _snackBar: MatSnackBar) { }
+  constructor(private bookService: BookService, private router: Router, private formBuilder: FormBuilder, private userservice: UserService, private _snackBar: MatSnackBar,private dataservice:DataService) { }
+  @Output() getcarttohomepage = new EventEmitter<string>();
 
   ngOnInit(): void {
     this.edituseraddressform = this.formBuilder.group({
@@ -45,7 +47,7 @@ export class GetcartComponent implements OnInit {
       this.cartList.reverse()
       this.cartlistcount = response.result.length
       console.log("CARTLIST=====>", this.cartList);
-
+      this.dataservice.changeMessage(this.cartlistcount)
     })
   }
 
@@ -140,5 +142,8 @@ export class GetcartComponent implements OnInit {
 
     })
 
+  }
+  onhome() {
+    this.router.navigateByUrl('/homepage/getallbooks')
   }
 }
