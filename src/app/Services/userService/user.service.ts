@@ -43,8 +43,31 @@ export class UserService {
     return this.httpService.putService('edit_user', reqData, true, headers)
   }
 
-  
-}
+  adminregistrationService(reqData: any) {
+    let headers = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        // 'x-access-token': this.token,
+      })
+    }
+    return this.httpService.postService('admin/registration', reqData, true, headers)
+  }
+
+
+  adminLoginService(reqData:any){
+    let headers = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        // Authorization: this.token
+      })
+    }
+    return this.httpService.postService('admin/login', reqData, true, headers)
+
+  }
+ 
+  }
+
+
 
 
 
