@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { PlaceorderComponent } from './placeorder.component';
 
@@ -8,7 +9,8 @@ describe('PlaceorderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlaceorderComponent ]
+      declarations: [ PlaceorderComponent ],
+      imports:[RouterTestingModule]
     })
     .compileComponents();
   });
@@ -21,5 +23,10 @@ describe('PlaceorderComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  
+  it('ongetallbooks', () => {
+    component.ongetallbooks()
+    expect(component.ongetallbooks).toBeTruthy();
   });
 });
