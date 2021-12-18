@@ -24,8 +24,8 @@
         <button [matMenuTriggerFor]="menu" class="toolbarlabels">
             <img src="../../../assets/homepageimages/person_outline_white_24dp.svg" [ngStyle.xs]="{'width.px': 20}">
         </button>
-        <button (click)="oncart()" class="toolbarlabels" [ngStyle.xs]="{'margin-left.px': -50}">
-            <img   src="../../../assets/homepageimages/shopping_cart_white_24dp.svg" [ngStyle.xs]="{'width.px': 20}"
+        <button   matBadge="{{message}}" matBadgeColor="warn" (click)="oncart()" class="toolbarlabels" [ngStyle.xs]="{'margin-left.px': -50}">
+            <img src="../../../assets/homepageimages/shopping_cart_white_24dp.svg" [ngStyle.xs]="{'width.px': 20}"
                 alt="">
         </button>
     </div>
@@ -104,6 +104,7 @@
     </mat-menu>
 
 </mat-toolbar>
+
 <div>
     <router-outlet></router-outlet>
 </div>
