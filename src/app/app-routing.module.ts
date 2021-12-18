@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './Components/admin/admin.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
 import { GetallbooksComponent } from './Components/getallbooks/getallbooks.component';
@@ -25,7 +26,8 @@ const routes: Routes = [
       {path:'wishlist',component:GetwishlistComponent,canActivate:[AuthGuard]},
       {path:'getcart',component:GetcartComponent},
       {path:'profile',component:ProfileComponent},
-      {path:'placeorder',component:PlaceorderComponent}
+      {path:'placeorder',component:PlaceorderComponent},
+      {path:'admin', component:AdminComponent}
       
     ]
   },
